@@ -11,6 +11,7 @@
 ##  Expressões Matematicas
 
 **( / )** = rachado
+___
 **( * )** = xis
 **( + )** = some
 **( - )** = atoche
