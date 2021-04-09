@@ -1,29 +1,34 @@
 import java.io.File;
+import java.io.FileReader;
 import java.util.Scanner;
 
 
 public class Gauches {
 public static void main(String[] args) {
-    try {
-        String[] lines = new String[2000];
-        int amount = 0;
-        File arquivo = new File("teste.txt");
-        Scanner entrada = new Scanner(arquivo);
-        
-        while (entrada.hasNextLine()) {
-            String line = entrada.nextLine();
-            lines[amount++] = line;
-        }
+  try {
+      String[] linhas = new String[2000];
+      int contador = 0;
+      
+      File file = new File("teste.txt");
+      System.out.println("1");
+      Scanner entrada = new Scanner(new FileReader("dados.txt"));
+      System.out.println("2");
 
-        entrada.close();
-        
-        for (int i = 0; i < amount; i++) {
-            System.out.println("Linha " + i + ": " + lines[i]);
-        }
-        } catch (Exception e) {
-            System.out.println("Nao foi possivel abrir o arquivo teste.txt");
-            System.out.println("Ele existe mesmo?");
-            e.printStackTrace();
-        }
-}
+      while (entrada.hasNextLine()) {
+          System.out.println("3");
+          String line = entrada.nextLine();
+          linhas[contador++] = line;
+      }
+
+      entrada.close();
+      
+      for (int i = 0; i < contador; i++) {
+          System.out.println("Linha " + i + ": " + linhas[i]);
+      }
+    } catch (Exception e) {
+        System.out.println("Nao foi possivel abrir o arquivo teste.txt");
+        System.out.println("Ele existe mesmo?");
+        e.printStackTrace();
+    }
+  }
 }
