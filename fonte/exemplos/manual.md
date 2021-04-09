@@ -1,35 +1,41 @@
 # gauches-lang
-##**Documentação da linguagem Gauches**##
+##**Documentação da linguagem Gauches**
 
-Sintaxe:
+**Sintaxe:**
 
-Variaveis:
-Int = todo
-Double = quebrado
-Boolean = jaguarice
-String = garrancho
+##  Variaveis
 
-Expressões Matematicas:
-( / ) = rachado
-( * )= xis
-( + )= some
-( - )= atoche
+**Int** = todo
+**Double** = quebrado
+**Boolean** = jaguarice
+**String** = garrancho
 
-Condições:
-IF = bha
-Else = tche
+##  Expressões Matematicas
 
-Loops:
-While = aprochegue
-For = barbaridade
+**( / )** = rachado
+**( * )** = xis
+**( + )** = some
+**( - )** = atoche
 
-- Reconhecendo e lendo o arquivo na Main
+##  Condições
 
-- Criar switch para reconhecer as variaveis/loops e suas funcionalidades (Passar tipo pro Java)
+**IF** = bha
+**Else** = tche
+
+##  Loops
+
+**While** = aprochegue
+**For** = barbaridade
+
+#Cronograma de Desenvolvimento (Essa parte vai sumir ao termino do trabalho)
+
+1. Reconhecendo e lendo o arquivo na Main
+
+2. Criar switch para reconhecer as variaveis/loops e suas funcionalidades (Passar tipo pro Java)
 
 
-- Implementar classe (TranVar) guarda elas em um vetor de vetor que recebe (nome e valor)
-
+3. Implementar classe (TranVar) guarda elas em um vetor de vetor que recebe (nome e valor)
+**Exemplo:**
 (utilizar [{nome, nome, nome}{10,10,10}]
 
 [memoria] => [
@@ -42,4 +48,4 @@ For = barbaridade
   }
 
 
-- Implementar classe (TransCondi) que recebe bha(primeira condição | operador | segunda condição) da linguagem gauches e coloca dentro do if (primeira condição | operador | segunda condição) Fazer função que recebe 3 parametros (primeira condição | operador | segunda condição);
+4. Implementar classe (TransCondi) que recebe bha(primeira condição | operador | segunda condição) da linguagem gauches e coloca dentro do if (primeira condição | operador | segunda condição) Fazer função que recebe 3 parametros (primeira condição | operador | segunda condição);
