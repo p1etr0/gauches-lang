@@ -1,5 +1,5 @@
 # gauches-lang
-Trabalho 2 de Prog 1
+##**Documentação da linguagem Gauches**##
 
 Sintaxe:
 
@@ -10,10 +10,10 @@ Boolean = jaguarice
 String = garrancho
 
 Expressões Matematicas:
-/ = rachado
-* = xis
-+ = some
-- = atoche
+( / ) = rachado
+( * )= xis
+( + )= some
+( - )= atoche
 
 Condições:
 IF = bha
