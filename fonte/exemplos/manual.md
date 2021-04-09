@@ -1,7 +1,5 @@
 # gauches-lang
-## Documentação da Linguagem Gauches
-
-**Sintaxe:**
+# Documentação da Linguagem Gauches
 
 ##  Variaveis
 
