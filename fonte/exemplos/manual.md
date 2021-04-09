@@ -3,46 +3,45 @@
 
 ##  Variaveis
 
-**Int** = todo
-**Double** = quebrado
-**Boolean** = jaguarice
-**String** = garrancho
+**Int** = todo  
+**Double** = quebrado  
+**Boolean** = jaguarice  
+**String** = garrancho  
 
 ##  Expressões Matematicas
 
-**( / )** = rachado 
-**( * )** = xis 
-**( + )** = some 
-**( - )** = atoche 
+__( / )__ = rachado  
+__( * )__ = xis  
+__( + )__ = some  
+__( - )__ = atoche  
 
 ##  Condições
 
-**IF** = bha
-**Else** = tche
+**IF** = bha  
+**Else** = tche  
 
 ##  Loops
 
-**While** = aprochegue
-**For** = barbaridade
+**While** = aprochegue  
+**For** = barbaridade  
 
-#Cronograma de Desenvolvimento (Essa parte vai sumir ao termino do trabalho)
+## Cronograma de Desenvolvimento (Essa Parte Vai Sumir ao Termino do Trabalho)
 
 1. Reconhecendo e lendo o arquivo na Main
 
-2. Criar switch para reconhecer as variaveis/loops e suas funcionalidades (Passar tipo pro Java)
+2.  Criar switch para reconhecer as variaveis/loops e suas funcionalidades (Passar tipo pro Java)
 
-
-3. Implementar classe (TranVar) guarda elas em um vetor de vetor que recebe (nome e valor)
-**Exemplo:**
+3.  Implementar classe (TranVar) guarda elas em um vetor de vetor que recebe (nome e valor)  
+**Exemplo:**  
 (utilizar [{nome, nome, nome}{10,10,10}]
 
-[memoria] => [
-    [variavel] => valor
-  ]
+[memoria] => [  
+    [variavel] => valor  
+]
  
- foreach(memoria as variavel => valor){
+ foreach(memoria as variavel => valor){  
     echo variavel;
-    echo valor;
+    echo valor;  
   }
 
 
