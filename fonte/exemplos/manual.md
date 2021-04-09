@@ -1,5 +1,5 @@
 # gauches-lang
-##**Documentação da linguagem Gauches**
+## Documentação da Linguagem Gauches
 
 **Sintaxe:**
 
