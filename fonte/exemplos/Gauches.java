@@ -22,6 +22,7 @@ public static void main(String[] args) {
       for (int i = 0; i < linhas.length ; i++){
           if(linhas[i] != null){
             linha = linha.concat(linhas[i]); 
+            
           }
       }
 
@@ -30,10 +31,23 @@ public static void main(String[] args) {
       for(int i = 0; i < arrayFrases.length; i++){
         arrayFrases = linha.split(";");
       }
+
+      // Dividindo o arquivo em um array quebrando no (" "):
+      //o Array frases tem cada palavra do arquivo:
+      String palavra = "";
+      String frases[] = new String[2000];
+      String frasesCertas[][] = new String[2000][2000];
+      for(int i = 0; i < 3; i++){
+        palavra = arrayFrases[i];
+        frases = palavra.split(" ");
+       for (int j = 0; j < frases.length; j++){
+            frasesCertas[i][j] = frases[j];
+       }
+      }
+      System.out.println(frasesCertas[2][3]);
+
       
-      
-      
-      Sintaxe.armazenaVetor("peixe",5);
+      //Sintaxe.armazenaVetor("peixe",5);
 
 
 
