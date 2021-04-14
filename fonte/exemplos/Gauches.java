@@ -2,7 +2,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;
 
-
 public class Gauches {
 public static void main(String[] args) {
   try {
@@ -25,20 +24,26 @@ public static void main(String[] args) {
             linha = linha.concat(linhas[i]); 
           }
       }
-      
+
       // Dividindo o arquivo em um array quebrando no (;):
-      String arrayFrases[] = new String[3];
+      String arrayFrases[] = new String[2000];
       for(int i = 0; i < arrayFrases.length; i++){
         arrayFrases = linha.split(";");
       }
-      System.out.println(arrayFrases[0]);
+      
+      
+      
+      Sintaxe.armazenaVetor("peixe",5);
+
+
 
     
-    } catch (Exception e) {
-        System.out.println("Nao foi possivel abrir o arquivo teste.txt");
-        System.out.println("Ele existe mesmo?");
-        e.printStackTrace();
+    } 
+    catch (Exception e) {
+        // System.out.println("Nao foi possivel abrir o arquivo teste.txt");
+        // System.out.println("Ele existe mesmo?");
+        // e.printStackTrace();
     }
-
+    
   }
 }

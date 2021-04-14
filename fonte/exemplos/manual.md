@@ -3,10 +3,10 @@
 
 ##  Variaveis
 
-**Int** = todo  
-**Double** = quebrado  
-**Boolean** = jaguarice  
-**String** = garrancho  
+**Int** = Todo  
+**Double** = Quebrado  
+**Boolean** = Jaguarice  
+**String** = Garrancho  
 
 ##  Expressões Matematicas
 
@@ -17,13 +17,13 @@ __( - )__ = atoche
 
 ##  Condições
 
-**IF** = bha  
-**Else** = tche  
+**IF** = Bha  
+**Else** = Tche  
 
 ##  Loops
 
-**While** = aprochegue  
-**For** = barbaridade  
+**While** = Aprochegue  
+**For** = Barbaridade  
 
 ## Cronograma de Desenvolvimento (Essa Parte Vai Sumir ao Termino do Trabalho)
 
