@@ -27,7 +27,7 @@ __( - )__ = atoche
 
 ## Cronograma de Desenvolvimento (Essa Parte Vai Sumir ao Termino do Trabalho)
 
-1. Reconhecendo e lendo o arquivo na Main
+(FEITO) 1. Reconhecendo e lendo o arquivo na Main (FEITO)
 
 2.  Criar switch para reconhecer as variaveis/loops e suas funcionalidades (Passar tipo pro Java)
 
