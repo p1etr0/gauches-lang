@@ -44,10 +44,30 @@ public static void main(String[] args) {
             frasesCertas[i][j] = frases[j];
        }
       }
-      System.out.println(frasesCertas[2][3]);
 
+      //I == linha // J == palavra
+      for(int i = 0; i < frasesCertas.length; i++){
+          for(int j = 0; j < frasesCertas.length; j++){
+            palavra = frasesCertas[i][j];
+            switch(palavra) {
+              case "Todo":
+              System.out.println("entrei");
+              String var = frasesCertas[i][j+1];
+              String valor = frasesCertas[i][j+3];
+              Sintaxe.armazenaVetor(var,valor);
+              System.exit(0);
+                break;
+              case "Quebrado":
+                // code block
+                break;
+              default:
+                System.out.println("Palavra não encontrada na linguagem Gauches (Olhe o Manual.md)");
+                break;
+            }
+          }
+      }
       
-      //Sintaxe.armazenaVetor("peixe",5);
+      
 
 
 
