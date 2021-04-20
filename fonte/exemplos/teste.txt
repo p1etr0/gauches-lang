@@ -1,3 +1,4 @@
 Todo a = 1;
-Todo b = 3;
 Quebrado c = 2.2;
+Jaguarice teste = true;
+Garrancho letra = pietro;
