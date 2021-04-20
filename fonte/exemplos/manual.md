@@ -10,10 +10,12 @@
 
 ##  Expressões Matematicas
 
-__( / )__ = rachado  
-__( * )__ = xis  
-__( + )__ = some  
-__( - )__ = atoche  
+Para acessar os elementos matematicos use o Calcule: Exemplo - (Calcule = 2 / 4)
+
+__( + )__ = adição
+__( - )__ = subtração  
+__( / )__ = divisão
+__( * )__ = multiplicação
 
 ##  Condições
 

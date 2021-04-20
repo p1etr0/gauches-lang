@@ -58,6 +58,7 @@ public static void main(String[] args) {
             //Recebe cada palavra do arquivo
             palavra = frasesCertas[i][j];
             if (palavra != null){
+              //System.out.println(palavra);
               //Faz a verificação se a palavra é uma variavel e armazena no array indicado com seu valor ao lado:
               switch(palavra) {
                 case "Todo":
@@ -83,6 +84,30 @@ public static void main(String[] args) {
                   String valorG = frasesCertas[i][j+3];
                   memoriaGarrancho.add(varG);
                   memoriaGarrancho.add(valorG);
+                  break;
+                case "Calcule":
+                  String operador = frasesCertas[i][j+3];
+                  String primeiro = frasesCertas[i][j+2];
+                  String segundo = frasesCertas[i][j+4];
+                  String procurarPor = ".";
+                  
+                  //verificar se é double ou inteiro
+                  boolean verificaDouble = primeiro.toLowerCase().contains(procurarPor.toLowerCase());
+                  boolean verificaDouble2 = segundo.toLowerCase().contains(procurarPor.toLowerCase());
+
+                  //Chama a função correta para calcular
+                  if(verificaDouble == false && verificaDouble2 == false){
+                    Sintaxe.CalculeInteiro(operador, primeiro, segundo);
+                  }
+                  else if(verificaDouble == false || verificaDouble2 == false){
+                    System.out.println("Não é possivel calcular double com inteiro");
+                    System.exit(0);
+                  }
+                  else{
+                    Double retorno = Sintaxe.CalculeDouble(operador, primeiro, segundo);
+                    System.out.println(retorno);
+                    System.exit(0);
+                  }
                   break;
                 default:
                   break;

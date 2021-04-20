@@ -2,3 +2,4 @@ Todo a = 1;
 Quebrado c = 2.2;
 Jaguarice teste = true;
 Garrancho letra = pietro;
+Calcule = 2.2 + 3.2;
