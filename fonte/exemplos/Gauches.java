@@ -97,14 +97,20 @@ public static void main(String[] args) {
 
                   //Chama a função correta para calcular
                   if(verificaDouble == false && verificaDouble2 == false){
-                    Sintaxe.CalculeInteiro(operador, primeiro, segundo);
+                    //FALTA SALVAR O RETORNO EM UM ARRAY 
+                    int retorno = Sintaxe.CalculeInteiro(operador, primeiro, segundo);
+                    //SYSTEMS ABAIXO PARA TESTAR
+                    System.out.println(retorno);
+                    System.exit(0);
                   }
                   else if(verificaDouble == false || verificaDouble2 == false){
                     System.out.println("Não é possivel calcular double com inteiro");
                     System.exit(0);
                   }
                   else{
+                    //FALTA SALVAR O RETORNO EM UM ARRAY
                     Double retorno = Sintaxe.CalculeDouble(operador, primeiro, segundo);
+                    //SYSTEMS ABAIXO PARA TESTAR
                     System.out.println(retorno);
                     System.exit(0);
                   }

@@ -14,25 +14,31 @@ public class Sintaxe {
     }    
 
 
-    public static void CalculeInteiro(String operador, String primeiro, String segundo){
+    public static int CalculeInteiro(String operador, String primeiro, String segundo){
         int a = Integer.parseInt(primeiro);
         int b = Integer.parseInt(segundo);
-            if (operador == "+"){
-                int soma = 0;
-                soma = a + b;
-            }
-            if (operador == "-"){
-                int subtracao = 0;
-                subtracao = a - b;
-            }
-            if (operador == "/"){
-                int divisao = 0;
-                divisao = a / b;
-            }
-            if (operador == "*"){
-                int multiplicacao = 0;
-                multiplicacao = a * b;
-            }
+        if (operador.equals("+")){
+            int soma = 0;
+            soma = a + b;
+            return soma;
+        }
+        if (operador.equals("-")){
+            int subtracao = 0;
+            subtracao = a - b;
+            return subtracao;
+        }
+        if (operador.equals("/")){
+            int divisao = 0;
+            divisao = a / b;
+            return divisao;
+        }
+        if (operador.equals("*")){
+            int multiplicacao = 0;
+            multiplicacao = a * b;
+            return multiplicacao;
+        }
+        b = 0;
+        return b;
         }
     
     public static double CalculeDouble(String operador, String primeiro, String segundo){
