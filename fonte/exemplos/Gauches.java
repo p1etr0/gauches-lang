@@ -51,6 +51,14 @@ public static void main(String[] args) {
       ArrayList<String> memoriaQuebrado = new ArrayList<String>();
       ArrayList<String> memoriaJaguarice = new ArrayList<String>();
       ArrayList<String> memoriaGarrancho = new ArrayList<String>();
+
+
+      //UTILIZAR GET INDEX SE VARIAVEL EXISTIR E COLOCAR O ADD(INDEX, ELEMENT) ADICIONANDO AO LADO DA VARIAVEL
+      // memoriaTodo.add(0, "teste");
+      // memoriaTodo.add(0, "teste2");
+      // memoriaTodo.add(1, "teste3");
+      // System.out.println(memoriaTodo);
+      // System.exit(0);
       
       //I == linha || J == palavra
       for(int i = 0; i < frasesCertas.length; i++){
@@ -58,32 +66,44 @@ public static void main(String[] args) {
             //Recebe cada palavra do arquivo
             palavra = frasesCertas[i][j];
             if (palavra != null){
-              //System.out.println(palavra);
+              boolean existe = memoriaTodo.contains(palavra);
+              
+              // System.exit(0);
+
+              
               //Faz a verificação se a palavra é uma variavel e armazena no array indicado com seu valor ao lado:
               switch(palavra) {
                 case "Todo":
                   String varT = frasesCertas[i][j+1];
-                  String valorT = frasesCertas[i][j+3];
                   memoriaTodo.add(varT);
-                  memoriaTodo.add(valorT);
+                  if(frasesCertas[i][j+2].equals("=")){
+                    String valorT = frasesCertas[i][j+3];
+                    memoriaTodo.add(valorT);
+                  }
                   break;
                 case "Quebrado":
                   String varQ = frasesCertas[i][j+1];
-                  String valorQ = frasesCertas[i][j+3];
                   memoriaQuebrado.add(varQ);
-                  memoriaQuebrado.add(valorQ);
+                  if(frasesCertas[i][j+2].equals("=")){
+                    String valorQ = frasesCertas[i][j+3];
+                    memoriaQuebrado.add(valorQ);
+                  }
                   break;
                 case "Jaguarice":
                   String varJ = frasesCertas[i][j+1];
-                  String valorJ = frasesCertas[i][j+3];
                   memoriaJaguarice.add(varJ);
-                  memoriaJaguarice.add(valorJ);
+                  if(frasesCertas[i][j+2].equals("=")){
+                    String valorJ = frasesCertas[i][j+3];
+                    memoriaJaguarice.add(valorJ);
+                  }
                   break;
                 case "Garrancho":
                   String varG = frasesCertas[i][j+1];
-                  String valorG = frasesCertas[i][j+3];
                   memoriaGarrancho.add(varG);
-                  memoriaGarrancho.add(valorG);
+                  if(frasesCertas[i][j+2].equals("=")){
+                    String valorG = frasesCertas[i][j+3];
+                    memoriaGarrancho.add(valorG);
+                  }
                   break;
                 case "Calcule":
                   String operador = frasesCertas[i][j+3];
