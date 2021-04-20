@@ -58,7 +58,7 @@ public static void main(String[] args) {
             //Recebe cada palavra do arquivo
             palavra = frasesCertas[i][j];
             if (palavra != null){
-              //Faz a verificação se a palavra é uma variavel e armazena no array indicado:
+              //Faz a verificação se a palavra é uma variavel e armazena no array indicado com seu valor ao lado:
               switch(palavra) {
                 case "Todo":
                   String varT = frasesCertas[i][j+1];
