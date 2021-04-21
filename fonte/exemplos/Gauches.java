@@ -19,7 +19,7 @@ public static void main(String[] args) {
       entrada.close();
 
       
-        //Jutando o arquivo em uma linha: 
+      //Jutando o arquivo em uma linha: 
       String linha = "";
       for (int i = 0; i < linhas.length ; i++){
           if(linhas[i] != null){
@@ -51,98 +51,138 @@ public static void main(String[] args) {
       ArrayList<String> memoriaQuebrado = new ArrayList<String>();
       ArrayList<String> memoriaJaguarice = new ArrayList<String>();
       ArrayList<String> memoriaGarrancho = new ArrayList<String>();
-
-
-      //UTILIZAR GET INDEX SE VARIAVEL EXISTIR E COLOCAR O ADD(INDEX, ELEMENT) ADICIONANDO AO LADO DA VARIAVEL
-      // memoriaTodo.add(0, "teste");
-      // memoriaTodo.add(0, "teste2");
-      // memoriaTodo.add(1, "teste3");
-      // System.out.println(memoriaTodo);
-      // System.exit(0);
+      ArrayList<String> memoriaCalcule = new ArrayList<String>();
       
       //I == linha || J == palavra
       for(int i = 0; i < frasesCertas.length; i++){
+         String novaLinha = ";";
           for(int j = 0; j < frasesCertas.length; j++){
+            
             //Recebe cada palavra do arquivo
             palavra = frasesCertas[i][j];
+            
             if (palavra != null){
-              boolean existe = memoriaTodo.contains(palavra);
-              
-              // System.exit(0);
+            //Verifica se a variavel já existe e se ja existir coloca o valor indicado:
+            boolean existeTodo = memoriaTodo.contains(palavra);
+            boolean existeQuebrado = memoriaQuebrado.contains(palavra);
+            boolean existeJaguarice = memoriaJaguarice.contains(palavra);
+            boolean existeGarrancho = memoriaGarrancho.contains(palavra);
+            if(existeTodo == true && novaLinha.equals(";")){
+              int index = memoriaTodo.indexOf(palavra);
+              memoriaTodo.set(index+1, frasesCertas[i][j+2]);
+            }
+            if(existeQuebrado == true && novaLinha.equals(";")){
+              int index = memoriaQuebrado.indexOf(palavra);
+              memoriaQuebrado.set(index+1, frasesCertas[i][j+2]);
+            }
+            if(existeJaguarice == true && novaLinha.equals(";")){
+              int index = memoriaJaguarice.indexOf(palavra);
+              memoriaJaguarice.set(index+1, frasesCertas[i][j+2]);
+            }
+            if(existeGarrancho == true && novaLinha.equals(";")){
+              int index = memoriaGarrancho.indexOf(palavra);
+              memoriaGarrancho.set(index+1, frasesCertas[i][j+2]);
+            }
+            novaLinha = "";
 
-              
-              //Faz a verificação se a palavra é uma variavel e armazena no array indicado com seu valor ao lado:
-              switch(palavra) {
-                case "Todo":
-                  String varT = frasesCertas[i][j+1];
-                  memoriaTodo.add(varT);
-                  if(frasesCertas[i][j+2].equals("=")){
-                    String valorT = frasesCertas[i][j+3];
-                    memoriaTodo.add(valorT);
-                  }
-                  break;
-                case "Quebrado":
-                  String varQ = frasesCertas[i][j+1];
-                  memoriaQuebrado.add(varQ);
-                  if(frasesCertas[i][j+2].equals("=")){
-                    String valorQ = frasesCertas[i][j+3];
-                    memoriaQuebrado.add(valorQ);
-                  }
-                  break;
-                case "Jaguarice":
-                  String varJ = frasesCertas[i][j+1];
-                  memoriaJaguarice.add(varJ);
-                  if(frasesCertas[i][j+2].equals("=")){
-                    String valorJ = frasesCertas[i][j+3];
-                    memoriaJaguarice.add(valorJ);
-                  }
-                  break;
-                case "Garrancho":
-                  String varG = frasesCertas[i][j+1];
-                  memoriaGarrancho.add(varG);
-                  if(frasesCertas[i][j+2].equals("=")){
-                    String valorG = frasesCertas[i][j+3];
-                    memoriaGarrancho.add(valorG);
-                  }
-                  break;
-                case "Calcule":
-                  String operador = frasesCertas[i][j+3];
-                  String primeiro = frasesCertas[i][j+2];
-                  String segundo = frasesCertas[i][j+4];
-                  String procurarPor = ".";
-                  
-                  //verificar se é double ou inteiro
-                  boolean verificaDouble = primeiro.toLowerCase().contains(procurarPor.toLowerCase());
-                  boolean verificaDouble2 = segundo.toLowerCase().contains(procurarPor.toLowerCase());
+            
+            //Faz a verificação se a palavra é uma variavel e armazena no array indicado com seu valor ao lado:
+            switch(palavra) {
+              case "Todo":
+                String varT = frasesCertas[i][j+1];
+                memoriaTodo.add(varT);
 
-                  //Chama a função correta para calcular
-                  if(verificaDouble == false && verificaDouble2 == false){
-                    //FALTA SALVAR O RETORNO EM UM ARRAY 
-                    int retorno = Sintaxe.CalculeInteiro(operador, primeiro, segundo);
-                    //SYSTEMS ABAIXO PARA TESTAR
-                    System.out.println(retorno);
-                    System.exit(0);
-                  }
-                  else if(verificaDouble == false || verificaDouble2 == false){
-                    System.out.println("Não é possivel calcular double com inteiro");
-                    System.exit(0);
-                  }
-                  else{
-                    //FALTA SALVAR O RETORNO EM UM ARRAY
-                    Double retorno = Sintaxe.CalculeDouble(operador, primeiro, segundo);
-                    //SYSTEMS ABAIXO PARA TESTAR
-                    System.out.println(retorno);
-                    System.exit(0);
-                  }
-                  break;
-                default:
-                  break;
+                if(frasesCertas[i][j+2] == null){
+                  String valorT = "indefinido";
+                  memoriaTodo.add(valorT);
+                }
+                else if(frasesCertas[i][j+2].equals("=")){
+                  String valorT = frasesCertas[i][j+3];
+                  memoriaTodo.add(valorT);
+                }
+              break;
+              case "Quebrado":
+                String varQ = frasesCertas[i][j+1];
+                memoriaQuebrado.add(varQ);
+                if(frasesCertas[i][j+2] == null){
+                  String valorQ = "indefinido";
+                  memoriaQuebrado.add(valorQ);
+                }
+                else if(frasesCertas[i][j+2].equals("=")){
+                  String valorQ = frasesCertas[i][j+3];
+                  memoriaQuebrado.add(valorQ);
+                }
+                break;
+
+              case "Jaguarice":
+                String varJ = frasesCertas[i][j+1];
+                memoriaJaguarice.add(varJ);
+                if(frasesCertas[i][j+2] == null){
+                  String valorJ = "indefinido";
+                  memoriaJaguarice.add(valorJ);
+                }
+                else if(frasesCertas[i][j+2].equals("=")){
+                  String valorJ = frasesCertas[i][j+3];
+                  memoriaJaguarice.add(valorJ);
+                }
+                break;
+              case "Garrancho":
+                String varG = frasesCertas[i][j+1];
+                memoriaGarrancho.add(varG);
+                if(frasesCertas[i][j+2] == null){
+                  String valorG = "indefinido";
+                  memoriaGarrancho.add(valorG);
+                }
+                else if(frasesCertas[i][j+2].equals("=")){
+                  String valorG = frasesCertas[i][j+3];
+                  memoriaGarrancho.add(valorG);
+                }
+                break;
+              case "Calcule":
+                String variavel = frasesCertas[i][j+1];
+                String primeiro = frasesCertas[i][j+3];
+                String operador = frasesCertas[i][j+4];
+                String segundo = frasesCertas[i][j+5];
+                String procurarPor = ".";
+                
+                //verificar se é double ou inteiro
+                boolean verificaDouble = primeiro.toLowerCase().contains(procurarPor.toLowerCase());
+                boolean verificaDouble2 = segundo.toLowerCase().contains(procurarPor.toLowerCase());
+
+                //Chama a função correta para calcular
+                if(verificaDouble == false && verificaDouble2 == false){
+                  int retorno = Sintaxe.CalculeInteiro(operador, primeiro, segundo);
+                  memoriaCalcule.add(variavel);
+                  String retornoAux = String.valueOf( retorno );
+                  memoriaCalcule.add(retornoAux);
+
+                }
+                else if(verificaDouble == false || verificaDouble2 == false){
+                  System.out.println("Não é possivel calcular double com inteiro");
+                  System.exit(0);
+                }
+                else{                 
+                  Double retorno = Sintaxe.CalculeDouble(operador, primeiro, segundo);
+                  memoriaCalcule.add(variavel);
+                  String retornoAux = String.valueOf( retorno );
+                  memoriaCalcule.add(retornoAux);
+                }
+                break;
+              default:
+                break;
               }
+
             }
           }
       }
       
-    
+      System.out.println(memoriaGarrancho);
+      System.out.println(memoriaJaguarice);
+      System.out.println(memoriaQuebrado);
+      System.out.println(memoriaTodo);
+      System.out.println(memoriaCalcule);
+      
+      
     } 
     catch (Exception e) {
         // System.out.println("Nao foi possivel abrir o arquivo teste.txt");

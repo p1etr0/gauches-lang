@@ -1,5 +1,9 @@
-Todo a = 1;
+Todo a;
 Quebrado c = 2.2;
 Jaguarice teste = true;
 Garrancho letra = pietro;
-Calcule = 2.2 + 3.2;
+
+a = 5;
+c = 6.2;
+letra = matheus;
+Calcule resultado = 5.2 + 3.2;
