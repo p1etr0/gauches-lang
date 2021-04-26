@@ -139,7 +139,15 @@ public static void main(String[] args) {
                 }
                 break;
               case "Amostre":
- 
+              String print = "";
+                if (frasesCertas[i][j+1].equals("'")){
+                  for (int cont = 2; !frasesCertas[i][j+cont].equals("'"); cont++){
+                    if(frasesCertas[i][j+cont] != null){
+                    print = print + frasesCertas[i][j+cont] + " " ;
+                    }
+                  }
+                  System.out.println(print);
+                }
                 //Verificamos se a varivel existe em alguma das memorias:
                 boolean valorTodo = memoriaTodo.contains(frasesCertas[i][j+1]);
                 boolean valorQuebrado = memoriaQuebrado.contains(frasesCertas[i][j+1]);
