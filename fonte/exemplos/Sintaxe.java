@@ -67,6 +67,9 @@ public class Sintaxe {
             b = 0;
             return b;
         }
+    public static void amostre(string valor){
+        System.out.println(valor);
+    }        
     }
     
 

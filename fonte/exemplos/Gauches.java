@@ -138,6 +138,30 @@ public static void main(String[] args) {
                   memoriaGarrancho.add(valorG);
                 }
                 break;
+              case "Amostre":
+                boolean valorTodo = memoriaTodo.contains(frasesCertas[i][j+1]);
+                boolean valorQuebrado = memoriaQuebrado.contains(frasesCertas[i][j+1]);
+                boolean valorJaguarice = memoriaJaguarice.contains(frasesCertas[i][j+1]);
+                boolean valorGarrancho = memoriaGarrancho.contains(frasesCertas[i][j+1]);
+                boolean valorCalcule = memoriaCalcule.contains(frasesCertas[i][j+1]);
+
+                if(valorTodo == true){
+                  int index = memoriaTodo.indexOf(palavra);
+                  memoriaTodo.set(index+1, frasesCertas[i][j+2]);
+                }
+                if(existeQuebrado == true){
+                  int index = memoriaQuebrado.indexOf(palavra);
+                  memoriaQuebrado.set(index+1, frasesCertas[i][j+2]);
+                }
+                if(existeJaguarice == true){
+                  int index = memoriaJaguarice.indexOf(palavra);
+                  memoriaJaguarice.set(index+1, frasesCertas[i][j+2]);
+                }
+                if(existeGarrancho == true){
+                  int index = memoriaGarrancho.indexOf(frasesCertas[i][j+1]);
+                }
+                
+                break;
               case "Calcule":
                 String variavel = frasesCertas[i][j+1];
                 String primeiro = frasesCertas[i][j+3];
