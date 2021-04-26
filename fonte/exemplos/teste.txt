@@ -6,4 +6,4 @@ Garrancho letra = pietro;
 a = 5;
 c = 6.2;
 Calcule resultado = 5.2 + 3.2; 
-Amostre letra;
+Amostre c;

@@ -139,12 +139,15 @@ public static void main(String[] args) {
                 }
                 break;
               case "Amostre":
+ 
+                //Verificamos se a varivel existe em alguma das memorias:
                 boolean valorTodo = memoriaTodo.contains(frasesCertas[i][j+1]);
                 boolean valorQuebrado = memoriaQuebrado.contains(frasesCertas[i][j+1]);
                 boolean valorJaguarice = memoriaJaguarice.contains(frasesCertas[i][j+1]);
                 boolean valorGarrancho = memoriaGarrancho.contains(frasesCertas[i][j+1]);
                 boolean valorCalcule = memoriaCalcule.contains(frasesCertas[i][j+1]);
 
+                //Pegamos a posição da variavel dentro do array e printamos o seu lado que esta do lado:
                 if(valorTodo == true){
                   int index = memoriaTodo.indexOf(frasesCertas[i][j+1]);
                   String valor = memoriaTodo.get(index+1);
@@ -170,7 +173,6 @@ public static void main(String[] args) {
                   String valor = memoriaCalcule.get(index+1);
                   Sintaxe.amostre(valor);
                 }
-                
                 break;
               case "Calcule":
                 String variavel = frasesCertas[i][j+1];
