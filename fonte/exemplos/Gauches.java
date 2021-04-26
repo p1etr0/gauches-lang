@@ -146,19 +146,29 @@ public static void main(String[] args) {
                 boolean valorCalcule = memoriaCalcule.contains(frasesCertas[i][j+1]);
 
                 if(valorTodo == true){
-                  int index = memoriaTodo.indexOf(palavra);
-                  memoriaTodo.set(index+1, frasesCertas[i][j+2]);
+                  int index = memoriaTodo.indexOf(frasesCertas[i][j+1]);
+                  String valor = memoriaTodo.get(index+1);
+                  Sintaxe.amostre(valor);
                 }
-                if(existeQuebrado == true){
-                  int index = memoriaQuebrado.indexOf(palavra);
-                  memoriaQuebrado.set(index+1, frasesCertas[i][j+2]);
+                if(valorQuebrado == true){
+                  int index = memoriaQuebrado.indexOf(frasesCertas[i][j+1]);
+                  String valor = memoriaQuebrado.get(index+1);
+                  Sintaxe.amostre(valor);
                 }
-                if(existeJaguarice == true){
-                  int index = memoriaJaguarice.indexOf(palavra);
-                  memoriaJaguarice.set(index+1, frasesCertas[i][j+2]);
+                if(valorJaguarice == true){
+                  int index = memoriaJaguarice.indexOf(frasesCertas[i][j+1]);
+                  String valor = memoriaJaguarice.get(index+1);
+                  Sintaxe.amostre(valor);
                 }
-                if(existeGarrancho == true){
+                if(valorGarrancho == true){
                   int index = memoriaGarrancho.indexOf(frasesCertas[i][j+1]);
+                  String valor = memoriaGarrancho.get(index+1);
+                  Sintaxe.amostre(valor);
+                }
+                if(valorCalcule == true){
+                  int index = memoriaCalcule.indexOf(frasesCertas[i][j+1]);
+                  String valor = memoriaCalcule.get(index+1);
+                  Sintaxe.amostre(valor);
                 }
                 
                 break;
@@ -198,15 +208,7 @@ public static void main(String[] args) {
 
             }
           }
-      }
-      
-      System.out.println(memoriaGarrancho);
-      System.out.println(memoriaJaguarice);
-      System.out.println(memoriaQuebrado);
-      System.out.println(memoriaTodo);
-      System.out.println(memoriaCalcule);
-      
-      
+      }   
     } 
     catch (Exception e) {
         // System.out.println("Nao foi possivel abrir o arquivo teste.txt");
