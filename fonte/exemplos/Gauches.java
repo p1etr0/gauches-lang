@@ -3,6 +3,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;
 
+import javax.swing.text.html.HTMLDocument.HTMLReader.ParagraphAction;
+
 public class Gauches {
 public static void main(String[] args) {
   try {
@@ -52,16 +54,33 @@ public static void main(String[] args) {
       ArrayList<String> memoriaJaguarice = new ArrayList<String>();
       ArrayList<String> memoriaGarrancho = new ArrayList<String>();
       ArrayList<String> memoriaCalcule = new ArrayList<String>();
-      
+      boolean leitura = true;
+      Integer Pare = 0;
       //I == linha || J == palavra
       for(int i = 0; i < frasesCertas.length; i++){
-         String novaLinha = ";";
+          String novaLinha = ";";
+          
           for(int j = 0; j < frasesCertas.length; j++){
+            palavra = frasesCertas[i][j]; //Recebe cada palavra do arquivo
             
-            //Recebe cada palavra do arquivo
-            palavra = frasesCertas[i][j];
             
-            if (palavra != null){
+            
+
+            if(palavra != null){
+              
+              if(leitura == false){
+
+                if(palavra.equals("Bah")){
+                    Pare++;
+                }
+                if(palavra.equals("Pare")){
+                    Pare--;
+                }
+                if(Pare == -1){
+                    leitura = true;
+                }
+                continue;
+              }
             //Verifica se a variavel já existe e se ja existir coloca o valor indicado:
             boolean existeTodo = memoriaTodo.contains(palavra);
             boolean existeQuebrado = memoriaQuebrado.contains(palavra);
@@ -212,6 +231,60 @@ public static void main(String[] args) {
                   memoriaCalcule.add(retornoAux);
                 }
                 break;
+
+              case "Bah":
+                  
+                  String primeiroPar = frasesCertas[i][j+1];
+                  String operadorIf = frasesCertas[i][j+2];
+                  String segundoPar = frasesCertas[i][j+3];
+                  
+                  switch(operadorIf){
+                      case "=":
+                        if(primeiroPar.equals(segundoPar)){
+                          //System.out.println("verdadeiro");
+                          leitura = true;
+                        }else{
+                          //System.out.println("falso");
+                          leitura = false;
+                        };
+                      
+                      case "!=":
+                        if(!primeiroPar.equals(segundoPar)){
+                            leitura = true;
+                        }else {
+                          leitura = false;
+                        }  
+
+                      case ">":
+                        if(Integer.parseInt(primeiroPar) >  Integer.parseInt(segundoPar)){
+                          leitura = true;
+                        }else {
+                          leitura = false;
+                        }
+                        
+                      case "<":
+                        if(Integer.parseInt(primeiroPar) < Integer.parseInt(segundoPar)){
+                          leitura = true;
+                        }else {
+                          leitura = false;
+                        } 
+                      
+                      case "<=":
+                        if(Integer.parseInt(primeiroPar) <= Integer.parseInt(segundoPar)){
+                          leitura = true;
+                        }else {
+                          leitura = false;
+                        } 
+
+                      case ">=":
+                        if(Integer.parseInt(primeiroPar) >= Integer.parseInt(segundoPar)){
+                          leitura = true;
+                        }else {
+                          leitura = false;
+                        }
+                  
+                    }
+                  
               default:
                 break;
               }

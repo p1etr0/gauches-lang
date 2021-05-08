@@ -19,8 +19,8 @@ __( * )__ = multiplicação
 
 ##  Condições
 
-**IF** = Bha  
-**Else** = Tche  
+**IF** = Bha - Pare **Para indicar o fim do Bah**
+**Else** = Tche - Pare **Para indicar o fim do Tche**
 
 ##  Loops
 
