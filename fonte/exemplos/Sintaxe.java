@@ -12,7 +12,7 @@ public class Sintaxe {
             }
         } 
     }    
-
+ 
     public static int CalculeInteiro(String operador, String primeiro, String segundo){
         int a = Integer.parseInt(primeiro);
         int b = Integer.parseInt(segundo);

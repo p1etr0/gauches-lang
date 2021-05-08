@@ -243,7 +243,7 @@ public static void main(String[] args) {
                   String primeiroPar = frasesCertas[i][j+1];
                   String operadorIf = frasesCertas[i][j+2];
                   String segundoPar = frasesCertas[i][j+3];
-                  
+                   
                   if(list.contains(operadorIf) == false){
                     System.out.println("Operador invalido");
                     System.exit(22);
