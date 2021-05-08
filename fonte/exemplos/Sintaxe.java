@@ -13,7 +13,6 @@ public class Sintaxe {
         } 
     }    
 
-
     public static int CalculeInteiro(String operador, String primeiro, String segundo){
         int a = Integer.parseInt(primeiro);
         int b = Integer.parseInt(segundo);
@@ -67,9 +66,88 @@ public class Sintaxe {
             b = 0;
             return b;
         }
-    public static void amostre(String valor){
-        System.out.println(valor);
-    }        
+
+        public static Boolean Bah(String segundoPar, String primeiroPar, String operadorIf){
+            switch(operadorIf){
+                case "=":
+                  if(primeiroPar.equals(segundoPar) == true){
+                    return true;
+                  }else{
+                    return false;
+                  }
+                case "!=":
+                  if(!primeiroPar.equals(segundoPar)){
+                        return true;
+                  }else {
+                        return false;
+                  }  
+                case ">":
+                  try {
+                    Integer first = Integer.parseInt(primeiroPar);
+                    Integer second = Integer.parseInt(segundoPar);
+                    if(first > second ){
+                        return true;
+                      
+                    }else {
+                        return false;
+                      
+                    }
+                  } catch (Exception e) {
+                    System.out.println(e);
+                    System.exit(0);
+                  }
+                case "<":
+                try {
+                      Integer first = Integer.parseInt(primeiroPar);
+                      Integer second = Integer.parseInt(segundoPar);
+                      if(first < second ){
+                        return true;
+                       
+                      }else {
+                        return false;
+                     
+                      }
+                    } catch (Exception e) {
+                      System.out.println(e);
+                      System.exit(0);
+                    }
+                case "<=":
+                try {
+                      Integer first = Integer.parseInt(primeiroPar);
+                      Integer second = Integer.parseInt(segundoPar);
+                      if(first <= second ){
+                        return true;
+                        
+                      }else {
+                        return false;
+                        
+                      }
+                    } catch (Exception e) {
+                      System.out.println(e);
+                      System.exit(0);
+                    }
+                case ">=":
+                try {
+                      Integer first = Integer.parseInt(primeiroPar);
+                      Integer second = Integer.parseInt(segundoPar);
+                      if(first >= second ){
+                        return true;
+                        
+                      }else {
+                        return false;
+                        
+                      }
+                    } catch (Exception e) {
+                      System.out.println(e);
+                      System.exit(0);
+                    }
+              }
+              return false;
+        }
+
+        public static void amostre(String valor){
+            System.out.println(valor);
+        }        
     }
     
 

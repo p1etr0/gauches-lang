@@ -1,12 +1,16 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Scanner;
 
-import javax.swing.text.html.HTMLDocument.HTMLReader.ParagraphAction;
 
 public class Gauches {
 public static void main(String[] args) {
+  String[] Operadores = {"=", "!=",">","<",">=","<="};
+  final List<String> list = Arrays.asList(Operadores);
+
   try {
       //Abre e le o arquivo e armazena em um array:
       String[] linhas = new String[2000];
@@ -29,11 +33,14 @@ public static void main(String[] args) {
           }
       }
 
+      //System.out.println(linha);
+
       // Dividindo o arquivo em um array quebrando no (;):
       String arrayFrases[] = new String[2000];
       for(int i = 0; i < arrayFrases.length; i++){
         arrayFrases = linha.split(";");
       }
+
 
       // Dividindo o arquivo em um array quebrando no (" "):
       // O Array frases[] tem cada palavra do arquivo:
@@ -63,24 +70,22 @@ public static void main(String[] args) {
           for(int j = 0; j < frasesCertas.length; j++){
             palavra = frasesCertas[i][j]; //Recebe cada palavra do arquivo
             
-            
-            
-
             if(palavra != null){
-              
               if(leitura == false){
-
                 if(palavra.equals("Bah")){
                     Pare++;
                 }
                 if(palavra.equals("Pare")){
                     Pare--;
                 }
+
                 if(Pare == -1){
                     leitura = true;
                 }
                 continue;
               }
+
+
             //Verifica se a variavel já existe e se ja existir coloca o valor indicado:
             boolean existeTodo = memoriaTodo.contains(palavra);
             boolean existeQuebrado = memoriaQuebrado.contains(palavra);
@@ -159,6 +164,7 @@ public static void main(String[] args) {
                 break;
               case "Amostre":
               String print = "";
+
                 if (frasesCertas[i][j+1].equals("'")){
                   for (int cont = 2; !frasesCertas[i][j+cont].equals("'"); cont++){
                     if(frasesCertas[i][j+cont] != null){
@@ -238,53 +244,14 @@ public static void main(String[] args) {
                   String operadorIf = frasesCertas[i][j+2];
                   String segundoPar = frasesCertas[i][j+3];
                   
-                  switch(operadorIf){
-                      case "=":
-                        if(primeiroPar.equals(segundoPar)){
-                          //System.out.println("verdadeiro");
-                          leitura = true;
-                        }else{
-                          //System.out.println("falso");
-                          leitura = false;
-                        };
-                      
-                      case "!=":
-                        if(!primeiroPar.equals(segundoPar)){
-                            leitura = true;
-                        }else {
-                          leitura = false;
-                        }  
+                  if(list.contains(operadorIf) == false){
+                    System.out.println("Operador invalido");
+                    System.exit(22);
+                  }
 
-                      case ">":
-                        if(Integer.parseInt(primeiroPar) >  Integer.parseInt(segundoPar)){
-                          leitura = true;
-                        }else {
-                          leitura = false;
-                        }
-                        
-                      case "<":
-                        if(Integer.parseInt(primeiroPar) < Integer.parseInt(segundoPar)){
-                          leitura = true;
-                        }else {
-                          leitura = false;
-                        } 
-                      
-                      case "<=":
-                        if(Integer.parseInt(primeiroPar) <= Integer.parseInt(segundoPar)){
-                          leitura = true;
-                        }else {
-                          leitura = false;
-                        } 
+                  leitura = Sintaxe.Bah(segundoPar, primeiroPar, operadorIf);
 
-                      case ">=":
-                        if(Integer.parseInt(primeiroPar) >= Integer.parseInt(segundoPar)){
-                          leitura = true;
-                        }else {
-                          leitura = false;
-                        }
-                  
-                    }
-                  
+                  break;
               default:
                 break;
               }
