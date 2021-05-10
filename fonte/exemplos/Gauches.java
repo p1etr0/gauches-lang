@@ -193,8 +193,7 @@ public static void main(String[] args) {
                 memoriaCalcule.add(retornoAux);
               }
             break;
-            case "Bah":
-                  
+            case "Bah":            
                   String primeiroPar = arquivo.frasesCertas[i][j+1];
                   String operadorIf = arquivo.frasesCertas[i][j+2];
                   String segundoPar = arquivo.frasesCertas[i][j+3];
@@ -205,7 +204,15 @@ public static void main(String[] args) {
                   }
 
                   leitura = Sintaxe.Bah(segundoPar, primeiroPar, operadorIf);
+                  
+                  /*IDEIA PARA REALIZAR O ESCOPO CASO FOR TRUE
+                  PASSAR A CRIAÇÃO DAS MEMORIAS PARA UMA CLASSE
+                  PASSAR A VALIDAÇÃO DE VARIAVEIS PARA UMA CLASSE
+                  PASSAR SWITCH PARA UMA CLASSE 
+                  CHAMAR CLASSE (ESCOPOIF) QUE CONTEM VALIDAÇÃO DE VARIAVEIS PARA CASO SEJA ALTERADO DENTRO DO IF E SWITCH PARA CALCULOS E NOVAS VARIAVEIS
 
+                  */
+                
                   break;
               default:
                 break;
