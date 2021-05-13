@@ -7,6 +7,8 @@ public class Gauches {
 public static void main(String[] args) {
     String[] Operadores = {"=", "!=",">","<",">=","<="};
     final List<String> list = Arrays.asList(Operadores);
+    String[] OperadoresMath = {"+","-","*","/"};
+    final List<String> listMath = Arrays.asList(OperadoresMath);
   
     ArquivoController arquivo = new ArquivoController();
     
@@ -48,9 +50,19 @@ public static void main(String[] args) {
           boolean existeQuebrado = memoriaQuebrado.contains(arquivo.palavra);
           boolean existeJaguarice = memoriaJaguarice.contains(arquivo.palavra);
           boolean existeGarrancho = memoriaGarrancho.contains(arquivo.palavra);
+          
           if(existeTodo == true && novaLinha.equals(";")){
-            int index = memoriaTodo.indexOf(arquivo.palavra);
-            memoriaTodo.set(index+1, arquivo.frasesCertas[i][j+2]);
+            if(arquivo.frasesCertas[i][j+3] == null){
+
+              int index = memoriaTodo.indexOf(arquivo.palavra);
+              memoriaTodo.set(index+1, arquivo.frasesCertas[i][j+2]);
+              
+            }else if(listMath.contains(arquivo.frasesCertas[i][j+3])){
+              int index = memoriaTodo.indexOf(arquivo.palavra);
+              String retorno = Integer.toString(Sintaxe.CalculeInteiro(arquivo.frasesCertas[i][j+3], arquivo.frasesCertas[i][j+2], arquivo.frasesCertas[i][j+4]));
+              System.out.println(retorno);
+              memoriaTodo.set(index+1, retorno);
+            }
           }
           if(existeQuebrado == true && novaLinha.equals(";")){
             int index = memoriaQuebrado.indexOf(arquivo.palavra);
@@ -74,7 +86,8 @@ public static void main(String[] args) {
               memoriaTodo.add(varT);
 
               if(arquivo.frasesCertas[i][j+2] == null){
-                String valorT = "indefinido";
+
+                String valorT = "0";
                 memoriaTodo.add(valorT);
               }
               else if(arquivo.frasesCertas[i][j+2].equals("=")){
@@ -86,7 +99,7 @@ public static void main(String[] args) {
               String varQ = arquivo.frasesCertas[i][j+1];
               memoriaQuebrado.add(varQ);
               if(arquivo.frasesCertas[i][j+2] == null){
-                String valorQ = "indefinido";
+                String valorQ = "0";
                 memoriaQuebrado.add(valorQ);
               }
               else if(arquivo.frasesCertas[i][j+2].equals("=")){
@@ -99,7 +112,7 @@ public static void main(String[] args) {
               String varJ = arquivo.frasesCertas[i][j+1];
               memoriaJaguarice.add(varJ);
               if(arquivo.frasesCertas[i][j+2] == null){
-                String valorJ = "indefinido";
+                String valorJ = "0";
                 memoriaJaguarice.add(valorJ);
               }
               else if(arquivo.frasesCertas[i][j+2].equals("=")){
@@ -111,7 +124,7 @@ public static void main(String[] args) {
               String varG = arquivo.frasesCertas[i][j+1];
               memoriaGarrancho.add(varG);
               if(arquivo.frasesCertas[i][j+2] == null){
-                String valorG = "indefinido";
+                String valorG = "0";
                 memoriaGarrancho.add(valorG);
               }
               else if(arquivo.frasesCertas[i][j+2].equals("=")){
@@ -221,5 +234,6 @@ public static void main(String[] args) {
           }
         }
     }  
+    System.out.println(memoriaTodo);
   }  
 }
