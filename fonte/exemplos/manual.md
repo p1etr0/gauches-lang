@@ -27,24 +27,6 @@ __( * )__ = multiplicação
 **While** = Aprochegue  
 **For** = Barbaridade  
 
-## Cronograma de Desenvolvimento (Essa Parte Vai Sumir ao Termino do Trabalho)
+## Print
 
-(FEITO) 1. Reconhecendo e lendo o arquivo na Main (FEITO)
-
-2.  Criar switch para reconhecer as variaveis/loops e suas funcionalidades (Passar tipo pro Java)
-
-3.  Implementar classe (TranVar) guarda elas em um vetor de vetor que recebe (nome e valor)  
-**Exemplo:**  
-(utilizar [{nome, nome, nome}{10,10,10}]
-
-[memoria] => [  
-    [variavel] => valor  
-]
- 
- foreach(memoria as variavel => valor){  
-    echo variavel;
-    echo valor;  
-  }
-
-
-4. Implementar classe (TransCondi) que recebe bha(primeira condição | operador | segunda condição) da linguagem gauches e coloca dentro do if (primeira condição | operador | segunda condição) Fazer função que recebe 3 parametros (primeira condição | operador | segunda condição);
+**Amostre** = Para printar um elemento na tela
