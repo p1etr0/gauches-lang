@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.io.File;
+
 import java.io.FileReader;
 import java.util.Scanner;
 
@@ -16,8 +15,6 @@ public class ArquivoController{
     public void leArquivo(){
         try {
             //Abre e le o arquivo e armazena em um array:
-
-            File file = new File("teste.txt");
             Scanner entrada = new Scanner(new FileReader("teste.txt"));
             while (entrada.hasNextLine()) {
                 String line = entrada.nextLine();

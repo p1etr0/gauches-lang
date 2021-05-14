@@ -45,13 +45,9 @@ public static void main(String[] args) {
                 }
                 continue;
               }
-          //Verifica se a variavel já existe e se ja existir coloca o valor indicado:
-          boolean existeTodo = memoriaTodo.contains(arquivo.palavra);
-          boolean existeQuebrado = memoriaQuebrado.contains(arquivo.palavra);
-          boolean existeJaguarice = memoriaJaguarice.contains(arquivo.palavra);
-          boolean existeGarrancho = memoriaGarrancho.contains(arquivo.palavra);
-          
-          if(existeTodo == true && novaLinha.equals(";")){
+             
+
+          if(memoriaTodo.contains(arquivo.palavra) && novaLinha.equals(";")){
             if(arquivo.frasesCertas[i][j+3] == null){
               int index = memoriaTodo.indexOf(arquivo.palavra);
               memoriaTodo.set(index+1, arquivo.frasesCertas[i][j+2]);
@@ -63,22 +59,22 @@ public static void main(String[] args) {
             }
           }
 
-          if(existeQuebrado == true && novaLinha.equals(";")){
+          if(memoriaQuebrado.contains(arquivo.palavra) && novaLinha.equals(";")){
             if(arquivo.frasesCertas[i][j+3] == null){
               int index = memoriaQuebrado.indexOf(arquivo.palavra);
               memoriaQuebrado.set(index+1, arquivo.frasesCertas[i][j+2]);
             }else if(listMath.contains(arquivo.frasesCertas[i][j+3])){
               int index = memoriaQuebrado.indexOf(arquivo.palavra);
-              String retorno = Integer.toString(Sintaxe.CalculeInteiro(arquivo.frasesCertas[i][j+3], arquivo.frasesCertas[i][j+2], arquivo.frasesCertas[i][j+4]));
+              String retorno = Double.toString(Sintaxe.CalculeDouble(arquivo.frasesCertas[i][j+3], arquivo.frasesCertas[i][j+2], arquivo.frasesCertas[i][j+4]));
               memoriaQuebrado.set(index+1, retorno);
             }
           }
 
-          if(existeJaguarice == true && novaLinha.equals(";")){     
+          if(memoriaJaguarice.contains(arquivo.palavra) && novaLinha.equals(";")){     
             int index = memoriaJaguarice.indexOf(arquivo.palavra);
             memoriaJaguarice.set(index+1, arquivo.frasesCertas[i][j+2]);
           }
-          if(existeGarrancho == true && novaLinha.equals(";")){
+          if(memoriaGarrancho.contains(arquivo.palavra) && novaLinha.equals(";")){
             int index = memoriaGarrancho.indexOf(arquivo.palavra);
             memoriaGarrancho.set(index+1, arquivo.frasesCertas[i][j+2]);
           }
@@ -111,6 +107,7 @@ public static void main(String[] args) {
                 String valorQ = arquivo.frasesCertas[i][j+3];
                 memoriaQuebrado.add(valorQ);
               }
+              
               break;
 
             case "Jaguarice":
@@ -140,48 +137,66 @@ public static void main(String[] args) {
               break;
 
             case "Amostre":
-            String print = "";
+            String print = ""; 
+            String var = "";
               if (arquivo.frasesCertas[i][j+1].equals("'")){
                 for (int cont = 2; !arquivo.frasesCertas[i][j+cont].equals("'"); cont++){
                   if(arquivo.frasesCertas[i][j+cont] != null){
-                  print = print + arquivo.frasesCertas[i][j+cont] + " " ;
+
+                    String teste = arquivo.frasesCertas[i][j+cont];
+                    int tamanhoString = teste.length();
+                    for(int tamanho = 0 ; tamanho < tamanhoString ; tamanho++ ){
+                      if (teste.charAt(tamanho) == '{'){
+                        for(int tamanho2 = tamanho+1; tamanho2 < tamanhoString; tamanho2++){
+                          if(teste.charAt(tamanho2) == '}') {
+                            continue;
+                          }
+                         
+                          var +=  teste.charAt(tamanho2);
+                        
+                        }
+                      }
+                    }
+                    if(var.length() > 0 ){
+                        //Pegamos a posição da variavel dentro do array e printamos o seu lado que esta do lado:
+                      if(memoriaTodo.contains(var)){
+                        int index = memoriaTodo.indexOf(var);
+                        String valor = memoriaTodo.get(index+1);
+                        print += valor + " ";
+
+                      }
+                      if(memoriaQuebrado.contains(var)){
+                        int index = memoriaQuebrado.indexOf(var);
+                        String valor = memoriaQuebrado.get(index+1);
+                        print += valor + " ";
+                      }
+                      if(memoriaJaguarice.contains(var)){
+                        int index = memoriaJaguarice.indexOf(var);
+                        String valor = memoriaJaguarice.get(index+1);
+                        print += valor + " ";
+                      }
+                      if(memoriaGarrancho.contains(var)){
+                        int index = memoriaGarrancho.indexOf(var);
+                        String valor = memoriaGarrancho.get(index+1);
+                        print += valor + " ";
+                      }
+                      if(memoriaCalcule.contains(var)){
+                        int index = memoriaCalcule.indexOf(var);
+                        String valor = memoriaCalcule.get(index+1);
+                        print += valor + " ";
+                      }
+                      var = "";
+                      continue;
+                    }
+                    print += arquivo.frasesCertas[i][j+cont] + " " ;
+
+
+  
+                   
                   }
                 }
-                System.out.println(print);
-              } 
-              //Verificamos se a varivel existe em alguma das memorias:
-              boolean valorTodo = memoriaTodo.contains(arquivo.frasesCertas[i][j+1]);
-              boolean valorQuebrado = memoriaQuebrado.contains(arquivo.frasesCertas[i][j+1]);
-              boolean valorJaguarice = memoriaJaguarice.contains(arquivo.frasesCertas[i][j+1]);
-              boolean valorGarrancho = memoriaGarrancho.contains(arquivo.frasesCertas[i][j+1]);
-              boolean valorCalcule = memoriaCalcule.contains(arquivo.frasesCertas[i][j+1]);
-
-              //Pegamos a posição da variavel dentro do array e printamos o seu lado que esta do lado:
-              if(valorTodo == true){
-                int index = memoriaTodo.indexOf(arquivo.frasesCertas[i][j+1]);
-                String valor = memoriaTodo.get(index+1);
-                Sintaxe.amostre(valor);
-              }
-              if(valorQuebrado == true){
-                int index = memoriaQuebrado.indexOf(arquivo.frasesCertas[i][j+1]);
-                String valor = memoriaQuebrado.get(index+1);
-                Sintaxe.amostre(valor);
-              }
-              if(valorJaguarice == true){
-                int index = memoriaJaguarice.indexOf(arquivo.frasesCertas[i][j+1]);
-                String valor = memoriaJaguarice.get(index+1);
-                Sintaxe.amostre(valor);
-              }
-              if(valorGarrancho == true){
-                int index = memoriaGarrancho.indexOf(arquivo.frasesCertas[i][j+1]);
-                String valor = memoriaGarrancho.get(index+1);
-                Sintaxe.amostre(valor);
-              }
-              if(valorCalcule == true){
-                int index = memoriaCalcule.indexOf(arquivo.frasesCertas[i][j+1]);
-                String valor = memoriaCalcule.get(index+1);
-                Sintaxe.amostre(valor);
-              }
+              }  
+              Sintaxe.amostre(print);
             break;
             
             case "Calcule":
@@ -242,6 +257,5 @@ public static void main(String[] args) {
           }
         }
     }  
-    System.out.println(memoriaTodo);
   }  
 }
