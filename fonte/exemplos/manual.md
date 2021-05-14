@@ -1,32 +1,57 @@
 # gauches-lang
 # Documentação da Linguagem Gauches
 
-##  Variaveis
+##  Variáveis
+
+***Java = Gauches***
 
 **Int** = Todo  
 **Double** = Quebrado  
 **Boolean** = Jaguarice  
 **String** = Garrancho  
 
-##  Expressões Matematicas
+##  Condições
 
-Para acessar os elementos matematicos use o Calcule: Exemplo - (Calcule = 2 / 4)
+***Java = Gauches***
+
+**IF** = Bha
+**Else** = Tche
+
+Para indicar o fim da condição Bha e Tche utilize a palavra reservada - **Pare** 
+
+
+##  Loops
+
+***Java = Gauches***
+
+**While** = Aprochegue  
+**For** = Barbaridade 
+
+##  Expressões Matematicas Permitidas
+
+***Java = Gauches***
 
 __( + )__ = adição
 __( - )__ = subtração  
 __( / )__ = divisão
 __( * )__ = multiplicação
 
-##  Condições
+## Cálculos Matemáticos
 
-**IF** = Bha - Pare **Para indicar o fim do Bah**
-**Else** = Tche - Pare **Para indicar o fim do Tche**
+**Para realizar um calculo na lingugagem Gauches é necessario utilizar a palavra (Calcule)**
 
-##  Loops
+*Exemplo:*
 
-**While** = Aprochegue  
-**For** = Barbaridade  
+**Calcule = 5 + 2;**
+**Calcule = a - 3;**
+**Calcule = 2 / 2;**
+**Calcule = 7 * 5;**
 
 ## Print
 
-**Amostre** = Para printar um elemento na tela
+**Para mostrar uma mensagem na tela utilizando a lingugagem Gauches é necessario utilizar a palavra (Amostre)**
+**Se você deseja printar uma variavel é necessario utilizar chaves( *{}* ) entorno da mesma**
+
+*Exemplo:*
+
+**Amostre ' a = {a} ';**
