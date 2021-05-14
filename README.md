@@ -1,2 +1,10 @@
 # gauches-lang
-Trabalho de Prog 2
+---
+
+##Integrantes do Grupo
+
+- Pietro de Souza Gonçalves
+- Jeferson Krumenauer
+- Vinícius Luís Tedesco
+- Artur Berno
+----
