@@ -1,7 +1,7 @@
 # gauches-lang
 ---
 
-##Integrantes do Grupo
+## Integrantes do Grupo
 
 - Pietro de Souza Gonçalves
 - Jeferson Krumenauer
