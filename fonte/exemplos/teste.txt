@@ -3,7 +3,7 @@ Quebrado c = 2.2;
 Jaguarice teste = true;
 Garrancho letra = pietro;
 
-a = 5;
-c = 6.2;
+a = 5 + 5;
+c = 6.2 + 2.2;
 Calcule resultado = 5.2 + 3.2; 
-Amostre ' letra eh verdadeiro ';
+Amostre ' a = {a} teste {c} ';
