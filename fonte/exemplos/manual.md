@@ -1,7 +1,10 @@
 # gauches-lang
 # Documentação da Linguagem Gauches
+---
 
-##  Variáveis
+##  Variáveis 
+
+
 
 ***Java = Gauches***
 
@@ -10,6 +13,7 @@
 **Boolean** = Jaguarice  
 **String** = Garrancho  
 
+---
 ##  Condições
 
 ***Java = Gauches***
@@ -19,7 +23,7 @@
 
 Para indicar o fim da condição Bha e Tche utilize a palavra reservada - **Pare** 
 
-
+--- 
 ##  Loops
 
 ***Java = Gauches***
@@ -27,6 +31,7 @@ Para indicar o fim da condição Bha e Tche utilize a palavra reservada - **Pare
 **While** = Aprochegue  
 **For** = Barbaridade 
 
+--- 
 ##  Expressões Matematicas Permitidas
 
 ***Java = Gauches***
@@ -36,6 +41,7 @@ __( - )__ = subtração
 __( / )__ = divisão
 __( * )__ = multiplicação
 
+--- 
 ## Cálculos Matemáticos
 
 **Para realizar um calculo na lingugagem Gauches é necessario utilizar a palavra (Calcule)**
@@ -47,6 +53,7 @@ __( * )__ = multiplicação
 **Calcule = 2 / 2;**
 **Calcule = 7 * 5;**
 
+--- 
 ## Print
 
 **Para mostrar uma mensagem na tela utilizando a lingugagem Gauches é necessario utilizar a palavra (Amostre)**
