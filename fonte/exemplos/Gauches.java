@@ -20,7 +20,11 @@ public static void main(String[] args) {
     ArrayList<String> memoriaJaguarice = new ArrayList<String>();
     ArrayList<String> memoriaGarrancho = new ArrayList<String>();
     ArrayList<String> memoriaCalcule = new ArrayList<String>();
-
+    ArrayList<Integer> pilhaWhile = new ArrayList<Integer>();
+    ArrayList<String> pilhaPar1 = new ArrayList<String>();
+    ArrayList<String> pilhaPar2 = new ArrayList<String>();
+    ArrayList<String> pilhaPar3 = new ArrayList<String>();
+    boolean leituraFor = true;
     boolean leitura = true;
     Integer Pare = 0;
     
@@ -31,6 +35,15 @@ public static void main(String[] args) {
           arquivo.palavra = arquivo.frasesCertas[i][j];//Recebe cada palavra do arquivo
           
           if (arquivo.palavra != null){
+
+            if(leituraFor == false){
+              if(arquivo.palavra.equals("EndAprochegue")){
+                leituraFor = true;
+              }else{
+                continue;
+              }
+            }     
+           
             if(leitura == false){
 
                 if(arquivo.palavra.equals("Bah")){
@@ -53,9 +66,44 @@ public static void main(String[] args) {
               memoriaTodo.set(index+1, arquivo.frasesCertas[i][j+2]);
               
             }else if(listMath.contains(arquivo.frasesCertas[i][j+3])){
-              int index = memoriaTodo.indexOf(arquivo.palavra);
-              String retorno = Integer.toString(Sintaxe.CalculeInteiro(arquivo.frasesCertas[i][j+3], arquivo.frasesCertas[i][j+2], arquivo.frasesCertas[i][j+4]));
+              int index = memoriaTodo.indexOf(arquivo.palavra);   
+              String primeiroPar = arquivo.frasesCertas[i][j+2];
+              String segundoPar = arquivo.frasesCertas[i][j+4];
+              System.out.println(primeiroPar);
+              System.out.println(segundoPar);
+
+              if(memoriaTodo.contains(arquivo.frasesCertas[i][j+2])){
+                int valor = memoriaTodo.indexOf(arquivo.frasesCertas[i][j+2]);
+                primeiroPar = memoriaTodo.get(valor+1);  
+              }if(memoriaQuebrado.contains(arquivo.frasesCertas[i][j+2])){
+                int valor = memoriaQuebrado.indexOf(arquivo.frasesCertas[i][j+2]);
+                primeiroPar = memoriaQuebrado.get(valor+1);
+              }if(memoriaJaguarice.contains(arquivo.frasesCertas[i][j+2])){
+                System.out.println("INT com Boolean");
+                System.exit(1);
+              }if(memoriaGarrancho.contains(arquivo.frasesCertas[i][j+2])){
+                System.out.println("INT com STRING");
+                System.exit(1);
+              }
+
+              if(memoriaTodo.contains(arquivo.frasesCertas[i][j+4])){
+                int valor = memoriaTodo.indexOf(arquivo.frasesCertas[i][j+4]);
+                segundoPar = memoriaTodo.get(valor+1);  
+              }if(memoriaQuebrado.contains(arquivo.frasesCertas[i][j+4])){
+                int valor = memoriaQuebrado.indexOf(arquivo.frasesCertas[i][j+4]);
+                segundoPar = memoriaQuebrado.get(valor+1);
+              }if(memoriaJaguarice.contains(arquivo.frasesCertas[i][j+4])){
+                System.out.println("INT com Boolean");
+                System.exit(1);
+              }if(memoriaGarrancho.contains(arquivo.frasesCertas[i][j+4])){
+                System.out.println("INT com STRING");
+                System.exit(1);
+              }
+
+              String retorno = Integer.toString(Sintaxe.CalculeInteiro(arquivo.frasesCertas[i][j+3],primeiroPar,segundoPar));
               memoriaTodo.set(index+1, retorno);
+            }else{
+              System.out.println("Operador invalido");
             }
           }
 
@@ -163,7 +211,6 @@ public static void main(String[] args) {
                         int index = memoriaTodo.indexOf(var);
                         String valor = memoriaTodo.get(index+1);
                         print += valor + " ";
-
                       }
                       if(memoriaQuebrado.contains(var)){
                         int index = memoriaQuebrado.indexOf(var);
@@ -189,9 +236,6 @@ public static void main(String[] args) {
                       continue;
                     }
                     print += arquivo.frasesCertas[i][j+cont] + " " ;
-
-
-  
                    
                   }
                 }
@@ -241,21 +285,80 @@ public static void main(String[] args) {
 
                   leitura = Sintaxe.Bah(segundoPar, primeiroPar, operadorIf);
                   
-                  /*IDEIA PARA REALIZAR O ESCOPO CASO FOR TRUE
-                  PASSAR A CRIAÇÃO DAS MEMORIAS PARA UMA CLASSE
-                  PASSAR A VALIDAÇÃO DE VARIAVEIS PARA UMA CLASSE
-                  PASSAR SWITCH PARA UMA CLASSE 
-                  CHAMAR CLASSE (ESCOPOIF) QUE CONTEM VALIDAÇÃO DE VARIAVEIS PARA CASO SEJA ALTERADO DENTRO DO IF E SWITCH PARA CALCULOS E NOVAS VARIAVEIS
 
-                  */
-                
                   break;
+              case "Aprochegue":
+                    pilhaPar1.clear();
+                    pilhaPar2.clear();
+                    pilhaPar3.clear();
+                    pilhaWhile.clear();
+                    pilhaWhile.add(i); 
+                    primeiroPar = arquivo.frasesCertas[i][j+1];
+                    operadorIf = arquivo.frasesCertas[i][j+2];
+                    segundoPar = arquivo.frasesCertas[i][j+3];
+                    pilhaPar2.add(operadorIf);
+
+                    if(memoriaTodo.contains(primeiroPar)){
+                        int index = memoriaTodo.indexOf(primeiroPar);
+                        String valor = memoriaTodo.get(index+1);
+                        pilhaPar1.add(valor);
+                    }else if(memoriaQuebrado.contains(primeiroPar)){
+                        int index = memoriaQuebrado.indexOf(primeiroPar);
+                        String valor = memoriaQuebrado.get(index+1);
+                        pilhaPar1.add(valor);
+                    }else if(memoriaJaguarice.contains(primeiroPar)){
+                        System.out.println("Invalido");
+                        System.exit(1);
+                    }else if(memoriaGarrancho.contains(primeiroPar)){
+                        System.out.println("Invalido");
+                        System.exit(1);
+                    }else{
+                        pilhaPar1.add(primeiroPar);
+                    }
+
+                    if(memoriaTodo.contains(segundoPar)){
+                        int index = memoriaTodo.indexOf(segundoPar);
+                        String valor = memoriaTodo.get(index+1);
+                        pilhaPar3.add(valor);
+                    }else if(memoriaQuebrado.contains(segundoPar)){
+                        int index = memoriaQuebrado.indexOf(segundoPar);
+                        String valor = memoriaQuebrado.get(index+1);
+                        pilhaPar3.add(valor);
+                    }else if(memoriaJaguarice.contains(segundoPar)){
+                        System.out.println("Invalido");
+                        System.exit(1);
+                    }else if(memoriaGarrancho.contains(segundoPar)){
+                        System.out.println("Invalido");
+                        System.exit(1);
+                    }else{
+                        pilhaPar3.add(segundoPar);
+                    }
+                                       
+
+                    Boolean valorFor = Sintaxe.Bah(pilhaPar3.get(pilhaPar3.size()-1),pilhaPar1.get(pilhaPar1.size()-1),pilhaPar2.get(pilhaPar2.size()-1));           
+                    if(valorFor == false){
+                      leituraFor = false;
+                    }else{
+                      leituraFor = true;
+                    }
+                    break;
+
+              case "EndAprochegue":
+
+                  valorFor = Sintaxe.Bah(pilhaPar3.get(pilhaPar3.size()-1),pilhaPar1.get(pilhaPar1.size()-1),pilhaPar2.get(pilhaPar2.size()-1));
+                
+                  if(valorFor == true){
+                    i = (pilhaWhile.get(pilhaWhile.size()-1)-1);
+                    j = 0;
+                  }else{
+                    continue;
+                  }
+
               default:
                 break;
             }
-
           }
         }
+      }   
     }  
-  }  
 }

@@ -64,7 +64,7 @@ public class Sintaxe {
                     return false;
                   }
                 case "!=":
-                  if(!primeiroPar.equals(segundoPar)){
+                  if(primeiroPar.equals(segundoPar) == false){
                         return true;
                   }else {
                         return false;
@@ -85,7 +85,7 @@ public class Sintaxe {
                     System.exit(0);
                   }
                 case "<":
-                try {
+                    try {
                       Integer first = Integer.parseInt(primeiroPar);
                       Integer second = Integer.parseInt(segundoPar);
                       if(first < second ){
