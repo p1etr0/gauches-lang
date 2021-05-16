@@ -69,8 +69,8 @@ public static void main(String[] args) {
               int index = memoriaTodo.indexOf(arquivo.palavra);   
               String primeiroPar = arquivo.frasesCertas[i][j+2];
               String segundoPar = arquivo.frasesCertas[i][j+4];
-              System.out.println(primeiroPar);
-              System.out.println(segundoPar);
+              //System.out.println(primeiroPar);
+             // System.out.println(segundoPar);
 
               if(memoriaTodo.contains(arquivo.frasesCertas[i][j+2])){
                 int valor = memoriaTodo.indexOf(arquivo.frasesCertas[i][j+2]);
@@ -114,6 +114,7 @@ public static void main(String[] args) {
             }else if(listMath.contains(arquivo.frasesCertas[i][j+3])){
               int index = memoriaQuebrado.indexOf(arquivo.palavra);
               String retorno = Double.toString(Sintaxe.CalculeDouble(arquivo.frasesCertas[i][j+3], arquivo.frasesCertas[i][j+2], arquivo.frasesCertas[i][j+4]));
+              
               memoriaQuebrado.set(index+1, retorno);
             }
           }
