@@ -274,20 +274,82 @@ public static void main(String[] args) {
                 memoriaCalcule.add(retornoAux);
               }
             break;
+
             case "Bah":            
-                  String primeiroPar = arquivo.frasesCertas[i][j+1];
-                  String operadorIf = arquivo.frasesCertas[i][j+2];
-                  String segundoPar = arquivo.frasesCertas[i][j+3];
-                   
-                  if(list.contains(operadorIf) == false){
-                    System.out.println("Operador invalido");
-                    System.exit(22);
-                  }
+              String primeiroPar = arquivo.frasesCertas[i][j+1];
+              String operadorIf = arquivo.frasesCertas[i][j+2];
+              String segundoPar = arquivo.frasesCertas[i][j+3];
+                
+              if(list.contains(operadorIf) == false){
+                System.out.println("Operador invalido");
+                System.exit(22);
+              }
 
-                  leitura = Sintaxe.Bah(segundoPar, primeiroPar, operadorIf);
-                  
+              //verifica o valor do primeiro parametro em memoria caso exista
+              if(memoriaTodo.contains(primeiroPar)){
+                int index = memoriaTodo.indexOf(primeiroPar);
+                String valor = memoriaTodo.get(index+1);
+                primeiroPar = valor;
+              }
 
-                  break;
+              if(memoriaQuebrado.contains(primeiroPar)){
+                int index = memoriaQuebrado.indexOf(primeiroPar);
+                String valor = memoriaQuebrado.get(index+1);
+                primeiroPar = valor;
+              }
+
+              if(memoriaJaguarice.contains(primeiroPar)){
+                int index = memoriaJaguarice.indexOf(primeiroPar);
+                String valor = memoriaJaguarice.get(index+1);
+                primeiroPar = valor ;
+              }
+
+              if(memoriaGarrancho.contains(primeiroPar)){
+                int index = memoriaGarrancho.indexOf(primeiroPar);
+                String valor = memoriaGarrancho.get(index+1);
+                primeiroPar = valor;
+              }
+
+              if(memoriaCalcule.contains(primeiroPar)){
+                int index = memoriaCalcule.indexOf(primeiroPar);
+                String valor = memoriaCalcule.get(index+1);
+                primeiroPar = valor;
+              }
+
+              //verifica o valor do segundo parametro em memoria caso exista
+              if(memoriaTodo.contains(segundoPar)){
+                int index = memoriaTodo.indexOf(segundoPar);
+                String valor = memoriaTodo.get(index+1);
+                segundoPar = valor;
+              }
+
+              if(memoriaQuebrado.contains(segundoPar)){
+                int index = memoriaQuebrado.indexOf(segundoPar);
+                String valor = memoriaQuebrado.get(index+1);
+                segundoPar = valor;
+              }
+
+              if(memoriaJaguarice.contains(segundoPar)){
+                int index = memoriaJaguarice.indexOf(segundoPar);
+                String valor = memoriaJaguarice.get(index+1);
+                segundoPar = valor ;
+              }
+
+              if(memoriaGarrancho.contains(segundoPar)){
+                int index = memoriaGarrancho.indexOf(segundoPar);
+                String valor = memoriaGarrancho.get(index+1);
+                segundoPar = valor;
+              }
+              if(memoriaCalcule.contains(segundoPar)){
+                int index = memoriaCalcule.indexOf(segundoPar);
+                String valor = memoriaCalcule.get(index+1);
+                segundoPar = valor;
+              }
+
+              leitura = Sintaxe.Bah(segundoPar, primeiroPar, operadorIf);
+
+            break;
+
               case "Aprochegue":
                     pilhaPar1.clear();
                     pilhaPar2.clear();
