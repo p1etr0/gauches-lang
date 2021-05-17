@@ -7,3 +7,7 @@ a = 5 + 5;
 c = 6.2 + 2.2;
 Calcule resultado = 5.2 + 3.2; 
 Amostre ' a = {a} teste {c} ';
+
+Bah a > 2;
+    Amostre ' a = {a} ';
+Pare;

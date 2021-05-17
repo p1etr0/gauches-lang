@@ -1,0 +1,7 @@
+Todo a;
+a = 8;
+
+Bah 10  a;
+    Amostre ' a = {a} ';
+Pare;
+

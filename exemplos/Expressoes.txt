@@ -1,0 +1,4 @@
+Todo a = 2;
+Quebrado  b = 2.3;
+Jaguarice  = true;
+Garrancho d = Teste;
