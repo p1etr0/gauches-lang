@@ -52,6 +52,6 @@ public class ArquivoController{
         // System.out.println("Nao foi possivel abrir o arquivo teste.txt");
         // System.out.println("Ele existe mesmo?");
         // e.printStackTrace();
-         }
+        }
     }
 }

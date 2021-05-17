@@ -4,7 +4,7 @@ import java.util.List;
 
 
 public class Gauches {
-public static void main(String[] args) {
+  public static void main(String[] args) {
     String[] Operadores = {"=", "!=",">","<",">=","<="};
     final List<String> list = Arrays.asList(Operadores);
     String[] OperadoresMath = {"+","-","*","/"};
@@ -30,34 +30,33 @@ public static void main(String[] args) {
     
     //I == linha || J == palavra
     for(int i = 0; i < arquivo.frasesCertas.length; i++){
-        String novaLinha = ";";
-        for(int j = 0; j < arquivo.frasesCertas.length; j++){
-          arquivo.palavra = arquivo.frasesCertas[i][j];//Recebe cada palavra do arquivo
-          
-          if (arquivo.palavra != null){
+      String novaLinha = ";";
+      for(int j = 0; j < arquivo.frasesCertas.length; j++){
+        arquivo.palavra = arquivo.frasesCertas[i][j];//Recebe cada palavra do arquivo
 
-            if(leituraFor == false){
-              if(arquivo.palavra.equals("EndAprochegue")){
-                leituraFor = true;
-              }else{
-                continue;
-              }
-            }     
+        if (arquivo.palavra != null){
+          if(leituraFor == false){
+            if(arquivo.palavra.equals("EndAprochegue")){
+              leituraFor = true;
+            }else{
+              continue;
+            }
+          }     
            
-            if(leitura == false){
+          if(leitura == false){
 
-                if(arquivo.palavra.equals("Bah")){
-                    Pare++;
-                }
-                if(arquivo.palavra.equals("Pare")){
-                    Pare--;
-                }
+            if(arquivo.palavra.equals("Bah")){
+                Pare++;
+            }
+            if(arquivo.palavra.equals("Pare")){
+                Pare--;
+            }
 
-                if(Pare == -1){
-                    leitura = true;
-                }
-                continue;
-              }
+            if(Pare == -1){
+                leitura = true;
+            }
+            continue;
+          }
              
 
           if(memoriaTodo.contains(arquivo.palavra) && novaLinha.equals(";")){
@@ -129,7 +128,6 @@ public static void main(String[] args) {
           }
           novaLinha = "";
 
-          
           //Faz a verificação se a palavra é uma variavel e armazena no array indicado com seu valor ao lado:
           switch(arquivo.palavra) {
             case "Todo":
@@ -157,7 +155,7 @@ public static void main(String[] args) {
                 memoriaQuebrado.add(valorQ);
               }
               
-              break;
+            break;
 
             case "Jaguarice":
               String varJ = arquivo.frasesCertas[i][j+1];
@@ -170,7 +168,8 @@ public static void main(String[] args) {
                 String valorJ = arquivo.frasesCertas[i][j+3];
                 memoriaJaguarice.add(valorJ);
               }
-              break;
+
+            break;
 
             case "Garrancho":
               String varG = arquivo.frasesCertas[i][j+1];
@@ -183,11 +182,12 @@ public static void main(String[] args) {
                 String valorG = arquivo.frasesCertas[i][j+3];
                 memoriaGarrancho.add(valorG);
               }
-              break;
+
+            break;
 
             case "Amostre":
-            String print = ""; 
-            String var = "";
+              String print = ""; 
+              String var = "";
               if (arquivo.frasesCertas[i][j+1].equals("'")){
                 for (int cont = 2; !arquivo.frasesCertas[i][j+cont].equals("'"); cont++){
                   if(arquivo.frasesCertas[i][j+cont] != null){
@@ -200,9 +200,7 @@ public static void main(String[] args) {
                           if(teste.charAt(tamanho2) == '}') {
                             continue;
                           }
-                         
                           var +=  teste.charAt(tamanho2);
-                        
                         }
                       }
                     }
@@ -237,7 +235,6 @@ public static void main(String[] args) {
                       continue;
                     }
                     print += arquivo.frasesCertas[i][j+cont] + " " ;
-                   
                   }
                 }
               }  
@@ -350,78 +347,77 @@ public static void main(String[] args) {
 
             break;
 
-              case "Aprochegue":
-                    pilhaPar1.clear();
-                    pilhaPar2.clear();
-                    pilhaPar3.clear();
-                    pilhaWhile.clear();
-                    pilhaWhile.add(i); 
-                    primeiroPar = arquivo.frasesCertas[i][j+1];
-                    operadorIf = arquivo.frasesCertas[i][j+2];
-                    segundoPar = arquivo.frasesCertas[i][j+3];
-                    pilhaPar2.add(operadorIf);
+            case "Aprochegue":
+              pilhaPar1.clear();
+              pilhaPar2.clear();
+              pilhaPar3.clear();
+              pilhaWhile.clear();
+              pilhaWhile.add(i); 
+              primeiroPar = arquivo.frasesCertas[i][j+1];
+              operadorIf = arquivo.frasesCertas[i][j+2];
+              segundoPar = arquivo.frasesCertas[i][j+3];
+              pilhaPar2.add(operadorIf);
 
-                    if(memoriaTodo.contains(primeiroPar)){
-                        int index = memoriaTodo.indexOf(primeiroPar);
-                        String valor = memoriaTodo.get(index+1);
-                        pilhaPar1.add(valor);
-                    }else if(memoriaQuebrado.contains(primeiroPar)){
-                        int index = memoriaQuebrado.indexOf(primeiroPar);
-                        String valor = memoriaQuebrado.get(index+1);
-                        pilhaPar1.add(valor);
-                    }else if(memoriaJaguarice.contains(primeiroPar)){
-                        System.out.println("Invalido");
-                        System.exit(1);
-                    }else if(memoriaGarrancho.contains(primeiroPar)){
-                        System.out.println("Invalido");
-                        System.exit(1);
-                    }else{
-                        pilhaPar1.add(primeiroPar);
-                    }
+              if(memoriaTodo.contains(primeiroPar)){
+                int index = memoriaTodo.indexOf(primeiroPar);
+                String valor = memoriaTodo.get(index+1);
+                pilhaPar1.add(valor);
+              }else if(memoriaQuebrado.contains(primeiroPar)){
+                int index = memoriaQuebrado.indexOf(primeiroPar);
+                String valor = memoriaQuebrado.get(index+1);
+                pilhaPar1.add(valor);
+              }else if(memoriaJaguarice.contains(primeiroPar)){
+                  System.out.println("Invalido");
+                  System.exit(1);
+              }else if(memoriaGarrancho.contains(primeiroPar)){
+                  System.out.println("Invalido");
+                  System.exit(1);
+              }else{
+                  pilhaPar1.add(primeiroPar);
+              }
 
-                    if(memoriaTodo.contains(segundoPar)){
-                        int index = memoriaTodo.indexOf(segundoPar);
-                        String valor = memoriaTodo.get(index+1);
-                        pilhaPar3.add(valor);
-                    }else if(memoriaQuebrado.contains(segundoPar)){
-                        int index = memoriaQuebrado.indexOf(segundoPar);
-                        String valor = memoriaQuebrado.get(index+1);
-                        pilhaPar3.add(valor);
-                    }else if(memoriaJaguarice.contains(segundoPar)){
-                        System.out.println("Invalido");
-                        System.exit(1);
-                    }else if(memoriaGarrancho.contains(segundoPar)){
-                        System.out.println("Invalido");
-                        System.exit(1);
-                    }else{
-                        pilhaPar3.add(segundoPar);
-                    }
-                                       
+              if(memoriaTodo.contains(segundoPar)){
+                int index = memoriaTodo.indexOf(segundoPar);
+                String valor = memoriaTodo.get(index+1);
+                pilhaPar3.add(valor);
+              }else if(memoriaQuebrado.contains(segundoPar)){
+                int index = memoriaQuebrado.indexOf(segundoPar);
+                String valor = memoriaQuebrado.get(index+1);
+                pilhaPar3.add(valor);
+              }else if(memoriaJaguarice.contains(segundoPar)){
+                System.out.println("Invalido");
+                System.exit(1);
+              }else if(memoriaGarrancho.contains(segundoPar)){
+                System.out.println("Invalido");
+                System.exit(1);
+              }else{
+                pilhaPar3.add(segundoPar);
+              }
+                                      
 
-                    Boolean valorFor = Sintaxe.Bah(pilhaPar3.get(pilhaPar3.size()-1),pilhaPar1.get(pilhaPar1.size()-1),pilhaPar2.get(pilhaPar2.size()-1));           
-                    if(valorFor == false){
-                      leituraFor = false;
-                    }else{
-                      leituraFor = true;
-                    }
-                    break;
+              Boolean valorFor = Sintaxe.Bah(pilhaPar3.get(pilhaPar3.size()-1),pilhaPar1.get(pilhaPar1.size()-1),pilhaPar2.get(pilhaPar2.size()-1));           
+              if(valorFor == false){
+                leituraFor = false;
+              }else{
+                leituraFor = true;
+              }
+            break;
 
-              case "EndAprochegue":
+            case "EndAprochegue":
+              valorFor = Sintaxe.Bah(pilhaPar3.get(pilhaPar3.size()-1),pilhaPar1.get(pilhaPar1.size()-1),pilhaPar2.get(pilhaPar2.size()-1));
+            
+              if(valorFor == true){
+                i = (pilhaWhile.get(pilhaWhile.size()-1)-1);
+                j = 0;
+              }else{
+                continue;
+              }
 
-                  valorFor = Sintaxe.Bah(pilhaPar3.get(pilhaPar3.size()-1),pilhaPar1.get(pilhaPar1.size()-1),pilhaPar2.get(pilhaPar2.size()-1));
-                
-                  if(valorFor == true){
-                    i = (pilhaWhile.get(pilhaWhile.size()-1)-1);
-                    j = 0;
-                  }else{
-                    continue;
-                  }
-
-              default:
-                break;
-            }
+               default:
+            break;
           }
         }
-      }   
-    }  
+      }
+    }   
+  }  
 }
